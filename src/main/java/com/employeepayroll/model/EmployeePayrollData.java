@@ -32,16 +32,18 @@ public @Data @NoArgsConstructor class EmployeePayrollData {
     @Column(name = "department")
     private List<String> department;
 
-
-    public EmployeePayrollData(EmployeePayrollDTO employeePayrollData) {
-        this.employeeId = employeeId;
-        this.name = employeePayrollData.name;
-        this.salary = employeePayrollData.salary;
-        this.gender= employeePayrollData.gender;
-        this.startDate= employeePayrollData.startDate;
-        this.note= employeePayrollData.note;
-        this.profilePic= employeePayrollData.profilePic;
-        this.department = employeePayrollData.department;
+    public EmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
+        this.updateEmployeePayrollData(empPayrollDTO);
     }
 
+    public void updateEmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
+        this.name = empPayrollDTO.name;
+        this.salary = empPayrollDTO.salary;
+        this.gender= empPayrollDTO.gender;
+        this.startDate= empPayrollDTO.startDate;
+        this.note= empPayrollDTO.note;
+        this.profilePic= empPayrollDTO.profilePic;
+        this.department = empPayrollDTO.department;
+    }
 }
+
